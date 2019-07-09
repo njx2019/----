@@ -1,1 +1,41 @@
-# ----
+# 爬取网页的通用代码框架
+import requests
+
+
+def getHTMLText(url):
+    try:
+        r = requests.get(url, timeout=30)  # 请求链接
+        r.raise_for_status()  # 如果状态不是200，引发HTTPError异常
+        r.encoding = r.apparent_encoding  # 使得返回内容的解码正确
+        return r.text  # 返回网页内容
+    except:
+        return "产生异常"
+
+
+if __name__ == "__main__":
+    url = "https://item.jd.com/8461498.html"
+    print(getHTMLText(url))
+
+
+"C:\Program Files\Python37\python.exe" C:/Users/Administrator/PycharmProjects/untitled1/hello.py
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!-- shouji -->
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <title>【联想拯救者Y7000P】联想(Lenovo)拯救者Y7000P英特尔酷睿i5 15.6英寸高色域游戏笔记本电脑(i5 8G 512G SSD GTX1060 144Hz)【行情 报价 价格 评测】-京东</title>
+    <meta name="keywords" content="Lenovo拯救者Y7000P,联想拯救者Y7000P,联想拯救者Y7000P报价,Lenovo拯救者Y7000P报价"/>
+    <meta name="description" content="【联想拯救者Y7000P】京东JD.COM提供联想拯救者Y7000P正品行货，并包括Lenovo拯救者Y7000P网购指南，以及联想拯救者Y7000P图片、拯救者Y7000P参数、拯救者Y7000P评论、拯救者Y7000P心得、拯救者Y7000P技巧等信息，网购联想拯救者Y7000P上京东,放心又轻松" />
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="mobile-agent" content="format=xhtml; url=//item.m.jd.com/product/8461498.html">
+    <meta http-equiv="mobile-agent" content="format=html5; url=//item.m.jd.com/product/8461498.html">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="canonical" href="//item.jd.com/8461498.html"/>
+        <link rel="dns-prefetch" href="//misc.360buyimg.com"/>
+    <link rel="dns-prefetch" href="//static.360buyimg.com"/>
+    <link rel="dns-prefetch" href="//img10.360buyimg.com"/>
+    <link rel="dns-prefetch" href="//img11.360buyimg.com"/>
+    <link rel="dns-prefetch" href="//img13.360buyimg.com"/>
+    <link rel="dns-prefetch" href="//img12.360buyimg.com"/>
+    <link rel="dns-prefetch" href="//img14.360buyimg.com"/>
+..........................................................................................................................................................................................................................................................................
