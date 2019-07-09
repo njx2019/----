@@ -1,6 +1,6 @@
-# 爬取网页的通用代码框架
-import requests
 
+import requests
+# 爬取网页的通用代码框架
 
 def getHTMLText(url):
     try:
